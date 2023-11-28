@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="final.css">
+    <link rel="icon" type="image/png" href="images/favilogo.png">
+    <title>Building Blocks of CS - BitBloom Institute</title>
+  </head>
+  <body>
+    <!-- Main Navigation Bar -->
+    <div class="header" id="myHeader">
+      <img src="images/logo.png" alt="BitBloom Institute Logo" class="logo">
+      <nav>
+        <button class="tablink" onclick="openTab('Home', this)" id="defaultOpen">HOME</button>
+        <button class="tablink" onclick="openTab('Algorithms', this)">Algorithms</button>
+        <button class="tablink" onclick="openTab('Data Structures', this)">Data Structures</button>
+        <button class="tablink" onclick="openTab('SDLC', this)">SDLC</button>
+        <button class="tablink" onclick="openTab('Basics', this)">Basics</button>
+      </nav>
+    </div>
+
+    <!-- Home Section -->
+    <div id="Home" class="tabcontent">
+
+      <div class="ide-container">
+        <div class="title-bar">
+          <span>BitBloom IDE</span>
+          <div class="window-controls">
+            <span class="minimize"></span>
+            <span class="maximize"></span>
+            <span class="close"></span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="text-container">
+            <span class="yellow-text">print</span>
+            <span class="blue-text">(</span>
+            <span class="red-text">"Welcome, to the BitBloom Institute!"</span>
+            <span class="blue-text">)</span>
+          </div>
+      
+          <div class="typewriter-container">
+            <div class="typewriter">
+              <div class="text"></div>
+              <div class="blinking-cursor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information Bubbles -->
+      <div class="bubble-container">
+        <div class="bubble" id="bubble1">
+          <h2>Mission Statement</h2>
+          <p>At BitBloom Institute, we aim to make computer science accessible and fun for everyone. Our mission is to provide top-notch learning materials, interactive tools, and a supportive community to help learners of all ages build a strong foundation in computer science. We are committed to inspiring creativity, encouraging curiosity, and preparing our users for success in the digital world. Whether you're a student, teacher, or just curious about computer science, we're here to help you on your learning journey.</p>
+        </div>
+        <div class="bubble" id="bubble2">
+          <h2>Brief Overview</h2>
+          <p>Discover the essence of computer science at BitBloom Institute. Dive into coding, unravel data structures, and explore algorithms through our interactive and straightforward lessons. Begin your journey into tech with us, no matter your starting point.</p>
+        </div>
+        <div class="bubble" id="bubble3">
+          <h2>Testimonial</h2>
+          <blockquote>"BitBloom Institute's courses were a game-changer for me. The interactive lessons on algorithms made complex concepts easy to understand and apply. Thanks to this platform, I aced my computer science exams and built a strong foundation for my future in tech."<br> - James K.</blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Sections Placeholder -->
+    <div id="Algorithms" class="tabcontent">
+      <br>
+      <br>
+      <br>
+      <div class="bubble-container">
+        <div class="bubble" id="bubble4">
+          <h2>What are algorithms?</h2>
+          <p>Algorithms are like recipes for computers. They are step-by-step instructions that tell a computer exactly what to do to solve a problem or complete a task. Just like following a recipe can help you make a cake, following an algorithm helps a computer get a job done.</p>
+        </div>
+        <div class="algorithm-controls">
+          <label for="algorithmComplexity">Choose an algorithm based on its time complexity:</label>
+          <select id="algorithmComplexity" onchange="displayComplexity()">
+            <option value="">Select an Algorithm</option>
+            <option value="bubbleSort">Bubble Sort - O(n^2)</option>
+            <option value="selectionSort">Selection Sort - O(n^2)</option>
+            <option value="insertionSort">Insertion Sort - O(n^2)</option>
+            <option value="mergeSort">Merge Sort - O(n log n)</option>
+            <option value="heapSort">Heap Sort - O(n log n)</option>
+            <option value="quickSort">Quick Sort - O(n log n)</option>
+            <!-- Add more algorithms as needed -->
+          </select>
+          <div class="array-size-input">
+            <label for="arraySize">Enter array size (1-20):</label>
+            <input type="number" id="arraySize" name="arraySize" min="1" max="100" value="10">
+            <button onclick="updateArraySize()">Generate New Array</button>
+          </div>
+        </div>
+        <!-- Visualization of the columns below the dropdown -->
+        <div id="arrayContainer" style="background-color: white; padding: 20px; margin-top: 30px; border: 1px solid #ddd;">
+          <div id="array"></div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <div class="algorithm-descriptions">
+        <!-- Bubble Sort Description -->
+        <div class="bubble algorithm-description" id="bubblebubbleSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Bubble Sort</h3>
+          <p> This algorithm repeatedly steps through the list...</p>
+          <button onclick="bubbleSort()">Sort with Bubble Sort</button>
+        </div>
+    
+        <!-- Selection Sort Description -->
+        <div class="bubble algorithm-description" id="bubbleselectionSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Selection Sort</h3>
+          <p> This algorithm divides the input list into two parts...</p>
+          <button onclick="selectionSort()">Sort with Selection Sort</button>
+        </div>
+    
+        <!-- Insertion Sort Description -->
+        <div class="bubble algorithm-description" id="bubbleinsertionSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Insertion Sort</h3>
+          <p> This algorithm builds the final sorted array one item at a time...</p>
+          <button onclick="insertionSort()">Sort with Insertion Sort</button>
+        </div>
+
+        <!-- Merge Sort Description -->
+        <div class="bubble algorithm-description" id="bubblemergeSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Merge Sort</h3>
+          <p> This algorithm builds the final sorted array one item at a time...</p>
+          <button onclick="startMergeSort()">Sort with Merge Sort</button>
+        </div>
+
+        <!-- Heap Sort Description -->
+        <div class="bubble algorithm-description" id="bubbleheapSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Heap Sort</h3>
+          <p> This algorithm builds the final sorted array one item at a time...</p>
+          <button onclick="startHeapSort()">Sort with Heap Sort</button>
+        </div>
+
+        <!-- Quick Sort Description -->
+        <div class="bubble algorithm-description" id="bubblequickSort" data-complexity="O(n^2)" style="display: none;">
+          <h3>Quick Sort</h3>
+          <p> This algorithm builds the final sorted array one item at a time...</p>
+          <button onclick="startQuickSort()">Sort with Quick Sort</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="Data Structures" class="tabcontent">
+      <br>
+      <br>
+      <br>
+      <div class="bubble-container">
+        <div class="bubble" id="bubble4">
+          <h2>What are the different data structures?</h2>
+          <ul>
+            <li> Array: <br> A collection of elements, each identified by an index or key, stored contiguously in memory. Arrays are fixed in size and allow fast access to elements but are inefficient for operations that involve insertion or deletion.</li> 
+            <br>
+            <li> Linked List: <br> A sequential collection of elements, where each element points to the next one, allowing for efficient insertions and deletions. Unlike arrays, linked lists do not provide fast access to a specific index.</li>
+            <br>
+            <li> Stack: <br> A collection of elements with two main operations: push (add an element) and pop (remove the last added element). It follows the Last In, First Out (LIFO) principle, making it useful for tasks like undo operations in software. </li>
+            <br>
+            <li> Queue: <br> Similar to a stack, but follows the First In, First Out (FIFO) principle. Elements are added to the back and removed from the front, making queues useful for task scheduling and breadth-first search algorithms. </li>
+          </ul>
+        </div>
+      <div class="bubble" id="bubble5">
+        <H2>Visualization of datastructures</H2>
+        <select id="dataStructureSelect">
+          <option value="array">Array</option>
+          <option value="linkedlist">Linked List</option>
+          <option value="stack">Stack</option>
+          <option value="queue">Queue</option>
+        </select>
+        <input type="number" id="numElements" placeholder="Number of elements" min="1" max="10">
+        <button id="runButton">Run</button>
+        
+        <!-- Container for visualization -->
+        <div class="visualization-container">
+          <h2>Visualization of Data Structures</h2>
+          <div id="visualization"></div>
+        </div>
+      </div>
+      <div class="bubble" id="bubble6">
+        <h2>Pros and Cons of Data Structures</h2>
+        <div class="pros-cons-container">
+            <div class="pros">
+                <h3>Pros</h3>
+                <ul>
+                    <li><strong>Array:</strong> Fast access, efficient memory usage.</li>
+                    <li><strong>Linked List:</strong> Dynamic size, efficient insertions/deletions.</li>
+                    <li><strong>Stack:</strong> Simple, LIFO principle is good for certain algorithms.</li>
+                    <li><strong>Queue:</strong> FIFO principle allows for fair ordering of processes.</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h3>Cons</h3>
+                <ul>
+                    <li><strong>Array:</strong> Fixed size, costly insertions/deletions.</li>
+                    <li><strong>Linked List:</strong> Greater memory usage, slower access time.</li>
+                    <li><strong>Stack:</strong> Limited access (only top element).</li>
+                    <li><strong>Queue:</strong> Limited access (only front element), potentially inefficient memory usage.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="applications-container">
+          <h3>Best Use Cases</h3>
+          <ul>
+              <li><strong>Array:</strong> Used when you need fast access to elements using an index, such as in a game for storing a high-score table.</li>
+              <li><strong>Linked List:</strong> Suitable for applications with frequent insertions and deletions, like a music player's playlist management.</li>
+              <li><strong>Stack:</strong> Useful in undo mechanisms in applications, such as text editors or photo editing software.</li>
+              <li><strong>Queue:</strong> Ideal for task scheduling, such as print job management in a printer's queue.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id='SDLC' class="tabcontent">
+      <br>
+      <br>
+      <br>
+      <div class="bubble-container">
+        <div class="bubble" id="bubble5">
+          <h2>Phase 1: Planning</h2>
+          <p>
+              In the planning phase, project goals and requirements are defined. A project plan
+              is created, including timelines and budgets. This phase sets the direction for the
+              entire project.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 2: Requirements Analysis</h2>
+          <p>
+              This phase involves gathering detailed requirements through consultations with stakeholders. 
+              The aim is to precisely define and document the project requirements, along with user expectations, 
+              to ensure clarity and alignment throughout the project.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 3: Design</h2>
+          <p>
+              In the design phase, the software specifications are translated into a design plan. Architects and 
+              developers create high-level design choices on architecture and technology stacks. Detailed design 
+              documents and mock-ups are also prepared.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 4: Implementation or Coding</h2>
+          <p>
+              During this phase, the actual development and coding of the software take place. Developers follow 
+              the design documents to build the codebase. Regular code reviews and quality assurance are integral 
+              parts of this phase.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 5: Testing</h2>
+          <p>
+              Once the software is developed, it undergoes rigorous testing to identify and fix any bugs or 
+              inconsistencies. This phase ensures the software meets all requirements and works as intended in 
+              various environments.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 6: Deployment</h2>
+          <p>
+              The software is deployed in the relevant environment where the end users can access it. This 
+              could be a staged rollout or a full launch, depending on the project scope and strategy.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Phase 7: Maintenance and Operations</h2>
+          <p>
+              Post-deployment, the software enters the maintenance phase where it is updated, upgraded, and 
+              fine-tuned based on user feedback and evolving requirements. This phase ensures the software 
+              remains functional and efficient over time.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+
+    <div id="Basics" class="tabcontent">
+      <br>
+      <br>
+      <br>
+      <div class="bubble-container">
+        <div class="bubble" id="bubble5">
+          <h2>Binary Basics</h2>
+          <p>
+              Binary is the fundamental building block of computer science. It involves only two digits, 0 and 1. 
+              Each digit in a binary number is called a bit. Binary numbers are used for representing all types of 
+              data in computing systems.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Converting to/from Binary</h2>
+          <p>
+              Converting between binary and other number systems, like decimal, is crucial in computing. For example, 
+              the binary number '1010' converts to the decimal number 10. Each bit represents a power of 2, with the 
+              rightmost bit being the least significant bit.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Bitwise Operations</h2>
+          <p>
+              Bitwise operations directly manipulate bits of binary numbers. Common operations include AND, OR, XOR, NOT, 
+              SHIFT LEFT, and SHIFT RIGHT. These operations are essential in low-level programming and hardware design.
+          </p>
+        </div>
+        <div class="bubble" id="bubble5">
+          <h2>Examples of Bitwise Operations</h2>
+          <ul>
+            <li><b>AND:</b> 1 AND 1 is 1; otherwise, it's 0.</li>
+            <li><b>OR:</b> 0 OR 0 is 0; otherwise, it's 1.</li>
+            <li><b>XOR:</b> 1 XOR 1 or 0 XOR 0 is 0; otherwise, it's 1.</li>
+            <li><b>NOT:</b> Flips the bits; NOT 1 is 0, and NOT 0 is 1.</li>
+            <li><b>SHIFT LEFT:</b> Moves bits to the left, introducing 0s on the right.</li>
+            <li><b>SHIFT RIGHT:</b> Moves bits to the right, introducing 0s on the left or keeping the sign bit in signed numbers.</li>
+          </ul>
+        </div>
+      </div>
+      <br>
+    </div>
+    
+
+
+    <!-- JavaScript File -->
+    <script src="final.js"></script>
+  </body>
+</html>
+
+
