@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #355C7D;
+  color: #fff;
+  line-height: 1.6;
+  transition: background-color 0.3s;
+}
+
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 75px; 
+  height: auto;
+  z-index: 1001;
+  border-radius: 10px;
+  background-blend-mode: multiply;
+  background-color: transparent;
+}
+
+.header, nav {
+  overflow: hidden;
+  background-color: #6C5B7B;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  display: inline-block;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.header a, .tablink {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.header a:hover, .tablink:hover {
+  background-color: #F67280;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.header a.active, .tablink.active {
+  background-color: #F8B195;
+  color: #fff;
+}
+
+.content {
+  padding: 20px;
+  transition: padding 0.3s;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bubble {
+  background-color: #6C5B7B;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  margin: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  /* Adjustments for content encapsulation */
+  min-width: auto; /* Remove min-width restriction */
+  max-width: auto; /* Remove max-width restriction */
+  height: auto; /* Allow height to adjust based on content */
+  text-align: left; /* Align text to the left */
+  line-height: normal; /* Use normal line height for paragraphs */
+  cursor: default; /* Default cursor instead of pointer */
+  display: block; /* Block display for content encapsulation */
+}
+
+#bubble4 {
+  background-color: #6C5B7B;
+  padding: 5px;
+  border-radius: 20px;
+  color: white;
+  margin: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  /* Adjustments for content encapsulation */
+  max-width: auto; /* Remove max-width restriction */
+  height: auto; /* Allow height to adjust based on content */
+  text-align: left; /* Align text to the left */
+  line-height: normal; /* Use normal line height for paragraphs */
+  cursor: default; /* Default cursor instead of pointer */
+  display: block; /* Block display for content encapsulation */
+  
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%); /* Start above the top of the page */
+    opacity: 0; /* Start from fully transparent */
+  }
+  to {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1; /* End at full opacity */
+  }
+}
+
+
+.bubble:hover {
+  background-color: #7E6A8A;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.bubble-container {
+  display: flex;
+  justify-content: space-around; /* Spread bubbles evenly across the container */
+  align-items: center; /* Center bubbles vertically */
+  height: 50vh; /* Full height of the viewport */
+  flex-wrap: wrap; /* Wrap bubbles onto next line if needed */
+}
+
+.bubble-content {
+  display: none; /* Initially hide the content */
+  background-color: #F8B195; /* Light background for content */
+  color: #5D4157; /* Contrast text color */
+  padding: 20px;
+  margin-top: 20px; /* Space above the content */
+  border-radius: 20px; /* Rounded corners like bubbles */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bubble-content.active {
+  display: block; /* Display content when active */
+}
+
+
+
+/* IDE Container */
+.ide-container {
+  width: 600px;
+  min-height: 150px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 100px; /* Adjust this value to be the height of your header plus any additional desired space */
+  margin-bottom: 20px; /* Maintain the original bottom margin */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title Bar */
+.title-bar {
+  background-color: #d0d0d0;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Window Controls */
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-controls span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.window-controls .minimize {
+  background-color: #ffbd44;
+}
+
+.window-controls .maximize {
+  background-color: #00ca56;
+}
+
+.window-controls .close {
+  background-color: #ff5f57;
+}
+
+/* Content Area */
+.content {
+  padding: 20px;
+}
+
+/* Print IDE Content */
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.yellow-text {
+  color: #795E26;
+  font-weight: bold;
+}
+
+.blue-text {
+  color: #043BFB;
+}
+
+.red-text {
+  color: #A31515;
+}
+
+/* Typing Animation */
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Set the background to white */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Add border to the box for visibility */
+}
+
+.typewriter {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.typewriter .text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  color: black; /* Set text color to black for visibility against white background */
+}
+
+.typewriter .blinking-cursor {
+  border-right: 4px solid black;
+  height: 1em;
+  animation: blink-cursor 0.75s steps(1) infinite normal;
+}
+
+@keyframes blink-cursor {
+  from { border-color: transparent }
+  to { border-color: black }
+}
+
+
+/* Algorithms*/
+#array {
+  display: flex;
+  align-items: flex-end;
+}
+.bar {
+  width: 20px;
+  margin: 0 2px;
+  background: #2ecc71; /* A bright green for the default state of the bars */
+  transition: height 0.3s;
+}
+
+/* Highlight bars that are being compared */
+.comparing {
+  background-color: #e74c3c; /* A bright red for comparison, which stands out */
+}
+
+/* Highlight bars that are in their final sorted position */
+.sorted {
+  background-color: #3498db; /* A bright blue for sorted bars */
+}
+/* Style for the algorithm complexity dropdown */
+#algorithmComplexity {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd; /* Light grey border */
+  background-color: #fff; /* White background */
+  color: #333; /* Darker text for better contrast */
+  font-family: 'Poppins', sans-serif; /* Match the font style of the page */
+  margin-bottom: 20px; /* Spacing after the dropdown */
+  cursor: pointer; /* Cursor to indicate it's clickable */
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Style for the array container to include visualization */
+#arrayContainer {
+  background-color: white; /* Assuming you want a white background */
+  padding: 20px;
+  margin-top: 30px; /* Adjust as needed for spacing */
+  border: 1px solid #ddd; /* Light grey border to match the dropdown */
+  border-radius: 5px; /* Rounded corners for the container */
+}
+
+/*CSS FOR DATA STRUCTURES*/
+
+#bubble5 {
+  width: 90vw;
+}
+.visualization-container {
+  margin-top: 20px;
+}
+
+#visualization {
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Add styles for your dropdown and button */
+#dataStructureSelect, #runButton {
+  margin: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.elements-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.element {
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+  transition: all 0.5s ease-in-out;
+  background-color: #043BFB;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Styles for array and linked list to display in a row */
+.elements-container.array, .elements-container.linkedlist, .elements-container.queue {
+  flex-direction: row;
+  align-items: center; /* Align items vertically */
+  justify-content: start; /* Align items to the start of the container */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Additional styles for linked list to indicate connections */
+.elements-container.linkedlist .element:not(:last-child):after {
+  content: '→';
+  margin-left: 10px;
+  color: white;
+  font-weight: normal;
+}
+
+/* Styles for stack to display in a column and add to the top */
+.elements-container.stack {
+  flex-direction: column; /* Stack elements from top to bottom */
+  align-items: center; /* Center stack elements */
+}
+
+
+/* Styles for queue to display in a row and add to the end */
+.elements-container.queue {
+  justify-content: start; /* Align queue elements to the start */
+}
+
+/* Highlighting new element */
+.new-element {
+  background-color: #d7b50b;
+  position: relative;
+  z-index: 10; /* Ensure new element is on top of others */
+}
+
+/* Adjustments for better visibility on smaller screens */
+@media (max-width: 768px) {
+  .elements-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .elements-container.array, .elements-container.linkedlist, .elements-container.queue {
+    flex-direction: column-reverse;
+  }
+}
+#numElements {
+  width: 100px;
+  height: 25px;
+}
+
+#bubble6 {
+  width: 90vw;
+}
+
+.bubble#bubble6 .pros-cons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bubble#bubble6 .pros, .bubble#bubble6 .cons {
+  width: 48%; /* Each column takes up less than half the container width */
+}
+
+.bubble#bubble6 .pros h3, .bubble#bubble6 .cons h3 {
+  text-align: center;
+  background-color: #1d1d1d;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bubble#bubble6 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bubble#bubble6 li {
+  background-color: #655e5e;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* CSS FOR SDLC */
+
+/* Style for the arrow buttons */
+.arrow-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.arrow {
+  background-color: #F67280;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow:hover {
+  background-color: #E95666;
+}
+
