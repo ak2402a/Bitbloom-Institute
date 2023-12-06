@@ -464,4 +464,39 @@ body {
 .arrow:hover {
   background-color: #E95666;
 }
+/* Bitwise */
+#calculator {
+  margin: auto;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #355C7D;
+}
+
+input[type="number"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+}
 
