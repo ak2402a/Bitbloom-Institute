@@ -243,6 +243,7 @@ async function selectionSort() {
 
     bars[i].classList.add('sorted');
   }
+  
 }
 
 // The Insertion Sort algorithm with added visualization logic
@@ -345,6 +346,7 @@ async function merge(array, start, middle, end, delay) {
     j++;
     k++;
   }
+  
 }
 
 // This function visualizes the sorting process
@@ -517,6 +519,62 @@ function visualizeDataStructure(dataStructure, numberOfElements) {
           elementsContainer.removeChild(newElementDiv);
       }, 2000); // Delay of 2 seconds
   }
+}
+
+// JS FOR SDLC
+function performOperation(operation) {
+  var input1 = document.getElementById('input1').value;
+  var input2 = document.getElementById('input2').value;
+
+  // Convert binary inputs to integers
+  var num1 = parseInt(input1, 2);
+  var num2 = parseInt(input2, 2);
+
+  var result;
+  switch (operation) {
+      case '&':
+          result = num1 & num2;
+          break;
+      case '|':
+          result = num1 | num2;
+          break;
+      case '^':
+          result = num1 ^ num2;
+          break;
+      case '<<':
+          result = num1 << num2;
+          break;
+      case '>>':
+          result = num1 >> num2;
+          break;
+      default:
+          result = "Invalid operation";
+  }
+
+  // Convert the result back to binary
+  var binaryResult = result.toString(2);
+
+  document.getElementById('result').innerText = "Binary Result: " + binaryResult;
+  document.getElementById('result2').innerText = "Integer Result: " + result;
+}
+
+function convertBinaryToInteger() {
+  var binaryInput = document.getElementById('binaryInput').value;
+
+  // Validate binary input
+  if (!/^[01]+$/.test(binaryInput)) {
+      alert("Please enter a valid binary number");
+      return;
+  }
+
+  var integerResult = parseInt(binaryInput, 2);
+  document.getElementById('binaryToIntegerResult').innerText = "Integer Result: " + integerResult;
+}
+
+function convertIntegerToBinary() {
+  var integerInput = document.getElementById('integerInput').value;
+  var binaryResult = parseInt(integerInput).toString(2);
+  document.getElementById('integerToBinaryResult').innerText = "Binary Result: " + binaryResult;
 }
 
 // JS FOR SDLC
