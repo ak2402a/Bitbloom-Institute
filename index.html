@@ -111,44 +111,125 @@
       <div class="algorithm-descriptions">
         <!-- Bubble Sort Description -->
         <div class="bubble algorithm-description" id="bubblebubbleSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Bubble Sort</h3>
-          <p> This algorithm repeatedly steps through the list...</p>
-          <button onclick="bubbleSort()">Sort with Bubble Sort</button>
+          <h3>Bubble Sort</h3> <button onclick="bubbleSort()">Sort with Bubble Sort</button>
+          <p> Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process repeats until the list is sorted.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def bubbleSort(arr): <br> </p>
+          <p style="margin-left: 25px;"> n = len(arr) </p>
+          <p style="margin-left: 25px;"> for i in range(n): </p>
+          <p style="margin-left: 50px;">for j in range(0, n-i-1): </p>
+          <p style="margin-left: 75px;"> if arr[j] > arr[j+1]: </p>
+          <p style="margin-left: 100px;"> arr[j], arr[j+1] = arr[j+1], arr[j] </p>
         </div>
     
         <!-- Selection Sort Description -->
         <div class="bubble algorithm-description" id="bubbleselectionSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Selection Sort</h3>
-          <p> This algorithm divides the input list into two parts...</p>
-          <button onclick="selectionSort()">Sort with Selection Sort</button>
+          <h3>Selection Sort</h3> <button onclick="selectionSort()">Sort with Selection Sort</button>
+          <p> Selection Sort divides the input list into two parts: a sorted sublist of items already processed, and an unsorted sublist for the remaining items. It repeatedly selects the smallest (or largest) element from the unsorted sublist and moves it to the end of the sorted sublist.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def selectionSort(arr): <br> </p>
+          <p style="margin-left: 25px;"> n = len(arr) </p>
+          <p style="margin-left: 25px;"> for i in range(n): </p>
+          <p style="margin-left: 50px;">for j in range(i+1, n):</p>
+          <p style="margin-left: 75px;"> if arr[j] < arr[min_index]: </p>
+          <p style="margin-left: 100px;"> min_index = j </p>
+          <p style="margin-left: 50px;">arr[i], arr[min_index] = arr[min_index], arr[i]</p>
+          
         </div>
     
         <!-- Insertion Sort Description -->
         <div class="bubble algorithm-description" id="bubbleinsertionSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Insertion Sort</h3>
-          <p> This algorithm builds the final sorted array one item at a time...</p>
-          <button onclick="insertionSort()">Sort with Insertion Sort</button>
+          <h3>Insertion Sort</h3> <button onclick="insertionSort()">Sort with Insertion Sort</button>
+          <p> Insertion Sort builds the final sorted array one item at a time. It works by taking elements from the unsorted list and inserting them at their correct position in a new sorted list.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def insertionSort(arr): <br> </p>
+          <p style="margin-left: 25px;"> for i in range(1, len(arr)): </p>
+          <p style="margin-left: 50px;"> key = arr[i]</p>
+          <p style="margin-left: 50px;">j = i-1</p>
+          <p style="margin-left: 50px;"> while j >=0 and key < arr[j]: </p>
+          <p style="margin-left: 100px;"> arr[j+1] = arr[j]</p>
+          <p style="margin-left: 100px;"> j -= 1</p>
+          <p style="margin-left: 50px;">arr[j+1] = key</p>
         </div>
 
         <!-- Merge Sort Description -->
         <div class="bubble algorithm-description" id="bubblemergeSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Merge Sort</h3>
-          <p> This algorithm builds the final sorted array one item at a time...</p>
-          <button onclick="startMergeSort()">Sort with Merge Sort</button>
+          <h3>Merge Sort</h3> <button onclick="startMergeSort()">Sort with Merge Sort</button>
+          <p> Merge Sort is a divide-and-conquer algorithm that divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def mergeSort(arr):</p>
+          <p style="margin-left: 25px;"> if len(arr) > 1: </p>
+          <p style="margin-left: 50px;">mid = len(arr)//2 </p>
+          <p style="margin-left: 50px;"> L = arr[:mid] </p>
+          <p style="margin-left: 50px;"> R = arr[mid:] </p>
+          <br> <br>
+          <p style="margin-left: 50px;"> mergeSort(L) </p>
+          <p style="margin-left: 50px;"> mergeSort(R) </p>
+          <br> <br>
+          <p style="margin-left: 50px;"> i = j = k = 0 </p>
+          <p style="margin-left: 50px;"> while i < len(L) and j < len(R): </p>
+          <p style="margin-left: 75px;">if L[i] < R[j]:</p>
+          <p style="margin-left: 100px;"> arr[k] = L[i] </p>
+          <p style="margin-left: 100px;"> i += 1 </p>
+          <p style="margin-left: 75px;"> else:</p> 
+          <p style="margin-left: 100px;"> arr[k] = R[j]</p> 
+          <p style="margin-left: 100px;"> j += 1 </p>
+          <p style="margin-left: 75px;"> k += 1 </p>
+          <br>
+          <p style="margin-left: 50px;">while i < len(L):</p>
+          <p style="margin-left: 75px;">arr[k] = L[i]</p>  
+          <p style="margin-left: 75px;"> i += 1 </p>
+          <p style="margin-left: 75px;">k += 1 </p>
+          <br>
+          <p style="margin-left: 50px;">while j < len(R): </p>
+          <p style="margin-left: 75px;"> arr[k] = R[j]</p>
+          <p style="margin-left: 75px;"> arr[k] = R[j]j += 1 </p>
+          <p style="margin-left: 75px;"> k += 1 </p>
         </div>
 
-        <!-- Heap Sort Description -->
+        <!-- Heap Sort Description NEEDS WORK -->
         <div class="bubble algorithm-description" id="bubbleheapSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Heap Sort</h3>
-          <p> This algorithm builds the final sorted array one item at a time...</p>
-          <button onclick="startHeapSort()">Sort with Heap Sort</button>
+          <h3>Heap Sort</h3> <button onclick="startHeapSort()">Sort with Heap Sort</button>
+          <p> Heap Sort involves building a Heap data structure from the input data and then utilizing the Heap to sort the array.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def heapify(arr, n, i):</p>
+          <p style="margin-left: 25px;">largest = i </p>
+          <p style="margin-left: 25px;">l = 2 * i + 1 </p>
+          <p style="margin-left: 25px;">r = 2 * i + 2 </p>
+          <br>
+          <p style="margin-left: 25px;">if l < n and arr[l] > arr[largest]:</p>
+          <p style="margin-left: 50px;">largest = l </p>
+          <br>
+          <p style="margin-left: 25px;">if r < n and arr[r] > arr[largest]: </p>
+          <p style="margin-left: 50px;">largest = r </p>
+          <br>
+          <p style="margin-left: 25px;">if largest != i:</p>
+          <p style="margin-left: 50px;">arr[i], arr[largest] = arr[largest], arr[i] </p>
+          <p style="margin-left: 50px;">heapify(arr, n, largest) </p>
+
+          <p>def heapSort(arr):</p>
+          <p style="margin-left: 25px;">n = len(arr) </p>
+          <p style="margin-left: 25px;">for i in range(n//2 - 1, -1, -1):</p>
+          <p style="margin-left: 50px;">heapify(arr, n, i) </p>
+          <br>
+          <p style="margin-left: 25px;">for i in range(n-1, 0, -1):</p>
+          <p style="margin-left: 50px;">arr[i], arr[0] = arr[0], arr[i]</p>
+          <p style="margin-left: 50px;">heapify(arr, i, 0)</p>
         </div>
 
-        <!-- Quick Sort Description -->
+        <!-- Quick Sort Description NEEDS WORK -->
         <div class="bubble algorithm-description" id="bubblequickSort" data-complexity="O(n^2)" style="display: none;">
-          <h3>Quick Sort</h3>
-          <p> This algorithm builds the final sorted array one item at a time...</p>
-          <button onclick="startQuickSort()">Sort with Quick Sort</button>
+          <h3>Quick Sort</h3> <button onclick="startQuickSort()">Sort with Quick Sort</button>
+          <p> Quick Sort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.</p>
+          <h3>Peusdo Code:</h3>
+          <p>def quickSort(arr):</p>
+          <p style="margin-left: 25px;">if len(arr) <= 1: </p>
+          <p style="margin-left: 50px;">return arr </p>
+          <p style="margin-left: 25px;">else: </p>
+          <p style="margin-left: 50px;">pivot = arr[0] </p>
+          <p style="margin-left: 50px;">less = [x for x in arr[1:] if x <= pivot] </p>
+          <p style="margin-left: 50px;">greater = [x for x in arr[1:] if x > pivot] </p>
+          <p style="margin-left: 50px;">return quick </p>
         </div>
       </div>
     </div>
@@ -282,6 +363,27 @@
               remains functional and efficient over time.
           </p>
         </div>
+        <div class="bubble" id="bubble5">
+          <h1>Agile Methodology</h1>
+          <h2>Definition and Key Concepts</h2>
+          <p>Agile is a project management and product development approach centered around incremental, iterative work sequences, known as sprints. It is popular in software development but applicable in other fields. Key concepts include Iterative Development, Collaboration, Flexibility, Value Delivery, and Continuous Improvement.</p>
+
+          <h2>Structure of Sprints in Agile</h2>
+          <ol>
+              <li><strong>Sprint Planning:</strong> A meeting to select tasks from the product backlog for the upcoming sprint, involving the team, product owner, and Scrum Master.</li>
+              <li><strong>Daily Stand-ups:</strong> Short daily meetings for the team to synchronize activities and create a plan for the next 24 hours.</li>
+              <li><strong>Sprint Execution:</strong> The team works on the tasks for the duration of the sprint, typically 2-4 weeks.</li>
+              <li><strong>Sprint Review:</strong> At the end of the sprint, the team presents the completed work to stakeholders for feedback.</li>
+              <li><strong>Sprint Retrospective:</strong> A meeting for the team to discuss what went well and what could be improved for the next sprint.</li>
+          </ol>
+
+          <h1>Agile Certifications</h1>
+          <p>Agile certifications validate Agile knowledge and skills and are recognized in various industries. Common certifications include:</p>
+          <ol>
+              <li><strong><a href="https://www.scrumalliance.org/courses-events/search?from=2023-12-06&to=2024-01-06&ctyp=Csm&cnty=US&rad=30&tz=my&pg=1"target="_blank">Certified ScrumMaster (CSM)</a></strong> - Focuses on the Scrum methodology.</li>
+              <li><strong><a href="https://www.scrumalliance.org/courses-events/search?from=2023-12-06&to=2024-01-06&ctyp=Cspo&cnty=US&rad=30&tz=my&pg=1"target="_blank">Certified Scrum Product Owner (CSPO)t</a></strong> - Focuses on the role of a Product Owner in Scrum.</li>
+              <li><strong><a href="https://www.scrumalliance.org/courses-events/search?from=2023-12-06&to=2024-01-06&ctyp=Csd&cnty=US&rad=30&tz=my&pg=1"target="_blank">Certified Scrum Developer</a></strong> - Focuses on the role of a devloper in Scrum.</li>
+        </div>
       </div>
     </div>
     
@@ -324,6 +426,28 @@
             <li><b>SHIFT LEFT:</b> Moves bits to the left, introducing 0s on the right.</li>
             <li><b>SHIFT RIGHT:</b> Moves bits to the right, introducing 0s on the left or keeping the sign bit in signed numbers.</li>
           </ul>
+          <h2>Binary to Int Calculator:</h2>
+          <div id="calculator">
+            <input type="text" id="binaryInput" placeholder="Enter binary number">
+            <button onclick="convertBinaryToInteger()">Convert to Integer</button>
+            <div id="binaryToIntegerResult"></div>
+
+            <!-- Integer to Binary Conversion -->
+            <input type="number" id="integerInput" placeholder="Enter integer"> 
+            <button onclick="convertIntegerToBinary()">Convert to Binary</button>
+            <div id="integerToBinaryResult"></div>
+          </div>
+          <h2>Bitwise Calculator:</h2>
+          <div id="calculator">
+            <input type="text" id="input1" placeholder="Enter first binary number">
+          <input type="text" id="input2" placeholder="Enter second binary number"> <br>
+            <button onclick="performOperation('&')">AND</button>
+            <button onclick="performOperation('|')">OR</button>
+            <button onclick="performOperation('^')">XOR</button>
+            <button onclick="performOperation('<<')">Left Shift</button>
+            <button onclick="performOperation('>>')">Right Shift</button>
+            <div id="result"></div>
+            <div id="result2"></div>
         </div>
       </div>
       <br>
