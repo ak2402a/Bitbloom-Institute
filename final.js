@@ -69,6 +69,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   window.onscroll = myStickyFunction;
 });
 
+function toggleVisibility(pseudoCodeId) {
+  var pseudoCode = document.getElementById(pseudoCodeId);
+  if (pseudoCode.style.display === "none") {
+      pseudoCode.style.display = "block";
+  } else {
+      pseudoCode.style.display = "none";
+  }
+}
+
+
 // Typewriter effect logic
 function initiateTypewriterEffect() {
   var text = "Welcome, to the BitBloom Institute!";
@@ -576,7 +586,5 @@ function convertIntegerToBinary() {
   var binaryResult = parseInt(integerInput).toString(2);
   document.getElementById('integerToBinaryResult').innerText = "Binary Result: " + binaryResult;
 }
-
-// JS FOR SDLC
 
 
