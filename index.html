@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="final.css">
-    <link rel="icon" type="image/png" href="favilogo.png">
+    <link rel="icon" type="image/png" href="images/favilogo.png">
     <title>Building Blocks of CS - BitBloom Institute</title>
   </head>
   <body>
     <!-- Main Navigation Bar -->
     <div class="header" id="myHeader">
-      <img src="logo.png" alt="BitBloom Institute Logo" class="logo">
+      <img src="images/logo.png" alt="BitBloom Institute Logo" class="logo">
       <nav>
         <button class="tablink" onclick="openTab('Home', this)" id="defaultOpen">HOME</button>
         <button class="tablink" onclick="openTab('Algorithms', this)">Algorithms</button>
@@ -23,7 +23,7 @@
 
     <!-- Home Section -->
     <div id="Home" class="tabcontent">
-      <br>
+
       <div class="ide-container">
         <div class="title-bar">
           <span>BitBloom IDE</span>
@@ -113,123 +113,134 @@
         <div class="bubble algorithm-description" id="bubblebubbleSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Bubble Sort</h3> <button onclick="bubbleSort()">Sort with Bubble Sort</button>
           <p> Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process repeats until the list is sorted.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def bubbleSort(arr): <br> </p>
-          <p style="margin-left: 25px;"> n = len(arr) </p>
-          <p style="margin-left: 25px;"> for i in range(n): </p>
-          <p style="margin-left: 50px;">for j in range(0, n-i-1): </p>
-          <p style="margin-left: 75px;"> if arr[j] > arr[j+1]: </p>
-          <p style="margin-left: 100px;"> arr[j], arr[j+1] = arr[j+1], arr[j] </p>
+          <button onclick="toggleVisibility('pseudoCodeBubble')">Click to view Pseudo code</button>
+          <div id="pseudoCodeBubble" style="display: none;">
+            <p>def bubbleSort(arr): <br> </p>
+            <p style="margin-left: 25px;"> n = len(arr) </p>
+            <p style="margin-left: 25px;"> for i in range(n): </p>
+            <p style="margin-left: 50px;">for j in range(0, n-i-1): </p>
+            <p style="margin-left: 75px;"> if arr[j] > arr[j+1]: </p>
+            <p style="margin-left: 100px;"> arr[j], arr[j+1] = arr[j+1], arr[j] </p>
+            </div>
         </div>
     
         <!-- Selection Sort Description -->
         <div class="bubble algorithm-description" id="bubbleselectionSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Selection Sort</h3> <button onclick="selectionSort()">Sort with Selection Sort</button>
           <p> Selection Sort divides the input list into two parts: a sorted sublist of items already processed, and an unsorted sublist for the remaining items. It repeatedly selects the smallest (or largest) element from the unsorted sublist and moves it to the end of the sorted sublist.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def selectionSort(arr): <br> </p>
-          <p style="margin-left: 25px;"> n = len(arr) </p>
-          <p style="margin-left: 25px;"> for i in range(n): </p>
-          <p style="margin-left: 50px;">for j in range(i+1, n):</p>
-          <p style="margin-left: 75px;"> if arr[j] < arr[min_index]: </p>
-          <p style="margin-left: 100px;"> min_index = j </p>
-          <p style="margin-left: 50px;">arr[i], arr[min_index] = arr[min_index], arr[i]</p>
-          
+          <button onclick="toggleVisibility('pseudoCodeSelection')">Click to view Pseudo code</button>
+          <div id="pseudoCodeSelection" style="display: none;">
+            <p>def selectionSort(arr): <br> </p>
+            <p style="margin-left: 25px;"> n = len(arr) </p>
+            <p style="margin-left: 25px;"> for i in range(n): </p>
+            <p style="margin-left: 50px;">for j in range(i+1, n):</p>
+            <p style="margin-left: 75px;"> if arr[j] < arr[min_index]: </p>
+            <p style="margin-left: 100px;"> min_index = j </p>
+            <p style="margin-left: 50px;">arr[i], arr[min_index] = arr[min_index], arr[i]</p>
+            </div>
         </div>
     
         <!-- Insertion Sort Description -->
         <div class="bubble algorithm-description" id="bubbleinsertionSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Insertion Sort</h3> <button onclick="insertionSort()">Sort with Insertion Sort</button>
           <p> Insertion Sort builds the final sorted array one item at a time. It works by taking elements from the unsorted list and inserting them at their correct position in a new sorted list.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def insertionSort(arr): <br> </p>
-          <p style="margin-left: 25px;"> for i in range(1, len(arr)): </p>
-          <p style="margin-left: 50px;"> key = arr[i]</p>
-          <p style="margin-left: 50px;">j = i-1</p>
-          <p style="margin-left: 50px;"> while j >=0 and key < arr[j]: </p>
-          <p style="margin-left: 100px;"> arr[j+1] = arr[j]</p>
-          <p style="margin-left: 100px;"> j -= 1</p>
-          <p style="margin-left: 50px;">arr[j+1] = key</p>
+          <button onclick="toggleVisibility('pseudoCodeInsertion')">Click to view Pseudo code</button>
+          <div id="pseudoCodeInsertion" style="display: none;">
+            <p>def insertionSort(arr): <br> </p>
+            <p style="margin-left: 25px;"> for i in range(1, len(arr)): </p>
+            <p style="margin-left: 50px;"> key = arr[i]</p>
+            <p style="margin-left: 50px;">j = i-1</p>
+            <p style="margin-left: 50px;"> while j >=0 and key < arr[j]: </p>
+            <p style="margin-left: 100px;"> arr[j+1] = arr[j]</p>
+            <p style="margin-left: 100px;"> j -= 1</p>
+            <p style="margin-left: 50px;">arr[j+1] = key</p>
+            </div>
         </div>
 
         <!-- Merge Sort Description -->
         <div class="bubble algorithm-description" id="bubblemergeSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Merge Sort</h3> <button onclick="startMergeSort()">Sort with Merge Sort</button>
           <p> Merge Sort is a divide-and-conquer algorithm that divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def mergeSort(arr):</p>
-          <p style="margin-left: 25px;"> if len(arr) > 1: </p>
-          <p style="margin-left: 50px;">mid = len(arr)//2 </p>
-          <p style="margin-left: 50px;"> L = arr[:mid] </p>
-          <p style="margin-left: 50px;"> R = arr[mid:] </p>
-          <br> <br>
-          <p style="margin-left: 50px;"> mergeSort(L) </p>
-          <p style="margin-left: 50px;"> mergeSort(R) </p>
-          <br> <br>
-          <p style="margin-left: 50px;"> i = j = k = 0 </p>
-          <p style="margin-left: 50px;"> while i < len(L) and j < len(R): </p>
-          <p style="margin-left: 75px;">if L[i] < R[j]:</p>
-          <p style="margin-left: 100px;"> arr[k] = L[i] </p>
-          <p style="margin-left: 100px;"> i += 1 </p>
-          <p style="margin-left: 75px;"> else:</p> 
-          <p style="margin-left: 100px;"> arr[k] = R[j]</p> 
-          <p style="margin-left: 100px;"> j += 1 </p>
-          <p style="margin-left: 75px;"> k += 1 </p>
-          <br>
-          <p style="margin-left: 50px;">while i < len(L):</p>
-          <p style="margin-left: 75px;">arr[k] = L[i]</p>  
-          <p style="margin-left: 75px;"> i += 1 </p>
-          <p style="margin-left: 75px;">k += 1 </p>
-          <br>
-          <p style="margin-left: 50px;">while j < len(R): </p>
-          <p style="margin-left: 75px;"> arr[k] = R[j]</p>
-          <p style="margin-left: 75px;"> arr[k] = R[j]j += 1 </p>
-          <p style="margin-left: 75px;"> k += 1 </p>
+          <button onclick="toggleVisibility('pseudoCodeMerge')">Click to view Pseudo code</button>
+          <div id="pseudoCodeMerge" style="display: none;">
+            <p>def mergeSort(arr):</p>
+            <p style="margin-left: 25px;"> if len(arr) > 1: </p>
+            <p style="margin-left: 50px;">mid = len(arr)//2 </p>
+            <p style="margin-left: 50px;"> L = arr[:mid] </p>
+            <p style="margin-left: 50px;"> R = arr[mid:] </p>
+            <br> <br>
+            <p style="margin-left: 50px;"> mergeSort(L) </p>
+            <p style="margin-left: 50px;"> mergeSort(R) </p>
+            <br> <br>
+            <p style="margin-left: 50px;"> i = j = k = 0 </p>
+            <p style="margin-left: 50px;"> while i < len(L) and j < len(R): </p>
+            <p style="margin-left: 75px;">if L[i] < R[j]:</p>
+            <p style="margin-left: 100px;"> arr[k] = L[i] </p>
+            <p style="margin-left: 100px;"> i += 1 </p>
+            <p style="margin-left: 75px;"> else:</p> 
+            <p style="margin-left: 100px;"> arr[k] = R[j]</p> 
+            <p style="margin-left: 100px;"> j += 1 </p>
+            <p style="margin-left: 75px;"> k += 1 </p>
+            <br>
+            <p style="margin-left: 50px;">while i < len(L):</p>
+            <p style="margin-left: 75px;">arr[k] = L[i]</p>  
+            <p style="margin-left: 75px;"> i += 1 </p>
+            <p style="margin-left: 75px;">k += 1 </p>
+            <br>
+            <p style="margin-left: 50px;">while j < len(R): </p>
+            <p style="margin-left: 75px;"> arr[k] = R[j]</p>
+            <p style="margin-left: 75px;"> arr[k] = R[j]j += 1 </p>
+            <p style="margin-left: 75px;"> k += 1 </p>
+            </div>
         </div>
 
         <!-- Heap Sort Description NEEDS WORK -->
         <div class="bubble algorithm-description" id="bubbleheapSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Heap Sort</h3> <button onclick="startHeapSort()">Sort with Heap Sort</button>
           <p> Heap Sort involves building a Heap data structure from the input data and then utilizing the Heap to sort the array.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def heapify(arr, n, i):</p>
-          <p style="margin-left: 25px;">largest = i </p>
-          <p style="margin-left: 25px;">l = 2 * i + 1 </p>
-          <p style="margin-left: 25px;">r = 2 * i + 2 </p>
-          <br>
-          <p style="margin-left: 25px;">if l < n and arr[l] > arr[largest]:</p>
-          <p style="margin-left: 50px;">largest = l </p>
-          <br>
-          <p style="margin-left: 25px;">if r < n and arr[r] > arr[largest]: </p>
-          <p style="margin-left: 50px;">largest = r </p>
-          <br>
-          <p style="margin-left: 25px;">if largest != i:</p>
-          <p style="margin-left: 50px;">arr[i], arr[largest] = arr[largest], arr[i] </p>
-          <p style="margin-left: 50px;">heapify(arr, n, largest) </p>
+          <button onclick="toggleVisibility('pseudoCodeHeap')">Click to view Pseudo code</button>
+          <div id="pseudoCodeHeap" style="display: none;">
+            <p>def heapify(arr, n, i):</p>
+            <p style="margin-left: 25px;">largest = i </p>
+            <p style="margin-left: 25px;">l = 2 * i + 1 </p>
+            <p style="margin-left: 25px;">r = 2 * i + 2 </p>
+            <br>
+            <p style="margin-left: 25px;">if l < n and arr[l] > arr[largest]:</p>
+            <p style="margin-left: 50px;">largest = l </p>
+            <br>
+            <p style="margin-left: 25px;">if r < n and arr[r] > arr[largest]: </p>
+            <p style="margin-left: 50px;">largest = r </p>
+            <br>
+            <p style="margin-left: 25px;">if largest != i:</p>
+            <p style="margin-left: 50px;">arr[i], arr[largest] = arr[largest], arr[i] </p>
+            <p style="margin-left: 50px;">heapify(arr, n, largest) </p>
 
-          <p>def heapSort(arr):</p>
-          <p style="margin-left: 25px;">n = len(arr) </p>
-          <p style="margin-left: 25px;">for i in range(n//2 - 1, -1, -1):</p>
-          <p style="margin-left: 50px;">heapify(arr, n, i) </p>
-          <br>
-          <p style="margin-left: 25px;">for i in range(n-1, 0, -1):</p>
-          <p style="margin-left: 50px;">arr[i], arr[0] = arr[0], arr[i]</p>
-          <p style="margin-left: 50px;">heapify(arr, i, 0)</p>
+            <p>def heapSort(arr):</p>
+            <p style="margin-left: 25px;">n = len(arr) </p>
+            <p style="margin-left: 25px;">for i in range(n//2 - 1, -1, -1):</p>
+            <p style="margin-left: 50px;">heapify(arr, n, i) </p>
+            <br>
+            <p style="margin-left: 25px;">for i in range(n-1, 0, -1):</p>
+            <p style="margin-left: 50px;">arr[i], arr[0] = arr[0], arr[i]</p>
+            <p style="margin-left: 50px;">heapify(arr, i, 0)</p>
+            </div>
         </div>
 
         <!-- Quick Sort Description NEEDS WORK -->
         <div class="bubble algorithm-description" id="bubblequickSort" data-complexity="O(n^2)" style="display: none;">
           <h3>Quick Sort</h3> <button onclick="startQuickSort()">Sort with Quick Sort</button>
           <p> Quick Sort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.</p>
-          <h3>Peusdo Code:</h3>
-          <p>def quickSort(arr):</p>
-          <p style="margin-left: 25px;">if len(arr) <= 1: </p>
-          <p style="margin-left: 50px;">return arr </p>
-          <p style="margin-left: 25px;">else: </p>
-          <p style="margin-left: 50px;">pivot = arr[0] </p>
-          <p style="margin-left: 50px;">less = [x for x in arr[1:] if x <= pivot] </p>
-          <p style="margin-left: 50px;">greater = [x for x in arr[1:] if x > pivot] </p>
-          <p style="margin-left: 50px;">return quick </p>
+          <button onclick="toggleVisibility('pseudoCodeQuick')">Click to view Pseudo code</button>
+          <div id="pseudoCodeQuick" style="display: none;">
+            <p>def quickSort(arr):</p>
+            <p style="margin-left: 25px;">if len(arr) <= 1: </p>
+            <p style="margin-left: 50px;">return arr </p>
+            <p style="margin-left: 25px;">else: </p>
+            <p style="margin-left: 50px;">pivot = arr[0] </p>
+            <p style="margin-left: 50px;">less = [x for x in arr[1:] if x <= pivot] </p>
+            <p style="margin-left: 50px;">greater = [x for x in arr[1:] if x > pivot] </p>
+            <p style="margin-left: 50px;">return quick </p>
+            </div>
         </div>
       </div>
     </div>
