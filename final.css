@@ -19,6 +19,7 @@ body {
   border-radius: 1vh;
   background-blend-mode: multiply;
   background-color: transparent;
+  min-width: 4px; /* Minimum width */
 }
 
 .header, nav {
